@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Rabbit</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_phone">Phone Number</string>
+    <string name="user_name">Name</string>
+    <string name="signUpPhone_error_message">Enter your Phone Number!</string>
+    <string name="verify_label_button">Verify</string>
+    <string name="signUpUsername_error_message">Enter your Name!</string>
+    <string name="signUp_error_title">Oops!</string>
+    <string name="login_error_title">Woah!</string>
+    <string name="menu_logout_label">Logout</string>
+    <string name="title_section1">Sharing</string>
+    <string name="title_section2">Camera</string>
+    <string name="title_section3">Feeds</string>
+    <string name="empty_inbox_label">No new messages!</string>
+    <string name="empty_feeds_label">No new feeds available!</string>
+    <string name="no_camera_label">No camera hardware detected!</string>
+    <string name="title_activity_friends">FriendsActivity</string>
+    <string name="menu_friends_label">Friends</string>
+    <string name="number_hint">Enter your mobile number</string>
+    <string name="verifying_message">Let us complete the verification.</string>
+    <string name="verify_button">Verify</string>
+    <string name="edit_name_field">Name</string>
+    <string name="login_logo">Logo</string>
+    <string name="msg_enter_mobile">msg_enter_mobile</string>
+    <string name="lbl_name">lbl_name</string>
+    <string name="lbl_mobile">lbl_mobile</string>
+    <string name="lbl_next">lbl_next</string>
+    <string name="msg_sit_back">msg_sit_back</string>
+    <string name="msg_manual_otp">msg_manual_otp</string>
+    <string name="lbl_enter_otp">lbl_enter_otp</string>
+    <string name="lbl_submit">lbl_submit</string>
+    <string name="sms_logo">sms_logo</string>
+    <string name="otp_image">otp_layout</string>
+</resources>
