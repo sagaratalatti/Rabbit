@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.android.rabbit.camera.CameraFragment;
+
 /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -51,4 +53,5 @@ import android.support.v4.app.FragmentPagerAdapter;
             }
             return null;
         }
+
     }

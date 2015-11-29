@@ -9,48 +9,49 @@ import com.android.volley.toolbox.Volley;
 
 public class RabbitApplication extends Application {
 
-    public static final String TAG = RabbitApplication.class.getSimpleName();
+        public static final String TAG = RabbitApplication.class.getSimpleName();
 
-    private RequestQueue mRequestQueue;
+        private RequestQueue mRequestQueue;
 
-    private static RabbitApplication mInstance;
+        private static RabbitApplication mInstance;
 
 
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        mInstance = this;
-    }
-
-    public static synchronized RabbitApplication getInstance(){
-        return mInstance;
-    }
-
-    public RequestQueue getmRequestQueue(){
-        if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        @Override
+        public void onCreate() {
+                super.onCreate();
+                mInstance = this;
         }
 
-        return mRequestQueue;
-    }
-
-    public <T> void addToRequestQueue(Request<T> req, String tag) {
-        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
-        getmRequestQueue().add(req);
-
-    }
-
-    public <T> void addToRequestQueue (Request<T> req){
-        req.setTag(TAG);
-        getmRequestQueue().add(req);
-    }
-
-    public void cancelPendingRequests(Object tag){
-        if (mRequestQueue != null){
-            mRequestQueue.cancelAll(tag);
+        public static synchronized RabbitApplication getInstance() {
+                return mInstance;
         }
-    }
 
+        public RequestQueue getRequestQueue() {
 
+                if (mRequestQueue == null) {
+                        mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+                }
+
+                return mRequestQueue;
+        }
+
+        public <T> void addToRequestQueue(Request<T> req, String tag) {
+                req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+                getRequestQueue().add(req);
+
+        }
+
+        public <T> void addToRequestQueue(Request<T> req) {
+                req.setTag(TAG);
+                getRequestQueue().add(req);
+        }
+
+        public void cancelPendingRequests(Object tag) {
+                if (mRequestQueue != null) {
+                        mRequestQueue.cancelAll(tag);
+                }
+        }
 }
+
+
+//}

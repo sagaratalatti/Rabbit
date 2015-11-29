@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="fab" type="id">fab_button</item>
+    <item name="pager" type="id">String</item>
+    <item name="photo" type="id">photo</item>
+    <item name="menu_switch_cam" type="id">switchcam</item>
 </resources>

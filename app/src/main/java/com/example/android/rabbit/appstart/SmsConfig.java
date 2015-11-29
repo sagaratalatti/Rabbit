@@ -5,8 +5,8 @@ package com.example.android.rabbit.appstart;
  */
 public class SmsConfig {
     // server URL configuration
-    public static final String URL_REQUEST_SMS = "http://192.168.0.101/android_sms/msg91/request_sms.php";
-    public static final String URL_VERIFY_OTP = "http://192.168.0.101/android_sms/msg91/verify_otp.php";
+    public static final String URL_REQUEST_SMS = "https://facebook.com";
+    public static final String URL_VERIFY_OTP = "http://facebook.com";
 
     // SMS provider identification
     // It should match with your SMS gateway origin

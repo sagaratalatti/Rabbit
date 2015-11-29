@@ -32,5 +32,11 @@
     <string name="lbl_submit">lbl_submit</string>
     <string name="sms_logo">sms_logo</string>
     <string name="otp_image">otp_layout</string>
-    <string name="btn_photo">Photo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_capture">Capture</string>
+    <string name="button_hint">Snap</string>
+    <string name="cam_button_hint">Snap</string>
+    <string name="btn_cam">Capture</string>
 </resources>

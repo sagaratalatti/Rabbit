@@ -9,13 +9,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.android.rabbit.RabbitApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
  * Created by sagar_000 on 11/22/2015.
@@ -46,7 +46,7 @@ public class HttpService extends IntentService {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, response.toString());
+                Log.d(TAG, response);
 
                 try {
 
@@ -91,7 +91,7 @@ public class HttpService extends IntentService {
         }) {
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("otp", otp);
 
                 Log.e(TAG, "Posting params:" + params.toString());
@@ -100,7 +100,7 @@ public class HttpService extends IntentService {
         };
 
         //Adding request to request queue
-        RabbitApplication.getInstance().addToRequestQueue(strReq);
+        //RabbitApplication.getInstance().addToRequestQueue(strReq);
             }
 
         }

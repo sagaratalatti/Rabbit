@@ -38,12 +38,9 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
     private static String TAG = SmsActivity.class.getSimpleName();
 
     private ViewPager viewPager;
-    private ViewPagerAdapter adapter;
-    private Button btnRequestSms, btnVerifyOtp;
     private EditText inputMobile, inputOtp;
     private ProgressBar progressBar;
     private SmsPrefManager pref;
-    private ImageButton btnEditMobile;
     private TextView txtEditMobile;
     private LinearLayout layoutEditMobile;
 
@@ -56,10 +53,10 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
         viewPager = (ViewPager) findViewById(R.id.viewPagerVertical);
         inputMobile = (EditText) findViewById(R.id.inputMobile);
         inputOtp = (EditText) findViewById(R.id.inputOtp);
-        btnRequestSms = (Button) findViewById(R.id.btn_request_sms);
-        btnVerifyOtp = (Button) findViewById(R.id.btn_verify_otp);
+        Button btnRequestSms = (Button) findViewById(R.id.btn_request_sms);
+        Button btnVerifyOtp = (Button) findViewById(R.id.btn_verify_otp);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnEditMobile = (ImageButton) findViewById(R.id.btn_edit_mobile);
+        ImageButton btnEditMobile = (ImageButton) findViewById(R.id.btn_edit_mobile);
         txtEditMobile = (TextView) findViewById(R.id.txt_edit_mobile);
         layoutEditMobile = (LinearLayout) findViewById(R.id.layout_sms);
 
@@ -83,7 +80,7 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
             finish();
         }
 
-        adapter = new ViewPagerAdapter();
+        ViewPagerAdapter adapter = new ViewPagerAdapter();
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -147,7 +144,7 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
             pref.setMobileNumber(mobile);
 
             // requesting for sms
-            requestForSMS(mobile, mobile);
+            requestForSMS(mobile);
 
         } else {
             Toast.makeText(getApplicationContext(), "Please enter valid mobile number", Toast.LENGTH_SHORT).show();
@@ -156,18 +153,18 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
 
     /**
      * Method initiates the SMS request on the server
-     * @param name   user name
+     *
      * @param mobile
      *
      *
      */
-    private void requestForSMS(final String name, final String mobile) {
+    private void requestForSMS( final String mobile) {
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 SmsConfig.URL_REQUEST_SMS, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, response.toString());
+                Log.d(TAG, response);
 
                 try {
                     JSONObject responseObj = new JSONObject(response);
@@ -221,11 +218,11 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
 
             /**
              * Passing user parameters to our server
-             * @return
+             * @return params
              */
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("mobile", mobile);
 
                 Log.e(TAG, "Posting params: " + params.toString());
@@ -259,7 +256,7 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
      * mobile number should be of 10 digits length
      *
      * @param mobile
-     * @return
+     *
      */
     private static boolean isValidPhoneNumber(String mobile) {
         String regEx = "^[0-9]{10}$";
